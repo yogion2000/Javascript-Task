@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Light</title>
+    <script src="domtask3.js"></script>
+    <style>
+        body{
+            background-color:#81d1ef;
+            height: 100vh;
+            width: 100vw;
+        }
+        .box1{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .box2{
+            display: flex;
+            flex-direction:row;
+            width: 200px;
+            justify-content: space-around;
+        }
+        .box3{
+            display: flex;
+            flex-direction:column;
+            height: 200px;
+            justify-content: space-around;
+        }
+        button{
+            height: 30px;
+            width:60px;
+            border-radius: 10px;
+            background-color:#1d1c3f;
+            color: white;
+        }
+        .traffic{
+            height: 200px;
+            background-color: #1d1c3f;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width:70px;
+            align-items: center;
+            border-radius: 30px;
+        }
+        .light{
+            width: 50px;
+            height: 50px;
+            background-color: #494e66;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <h1>Traffic Ligth</h1>
+        <div class="box2">
+            <div class="box3">
+                <button onclick="stop1()" id="red">Stop</button>
+                <button onclick="ready1()" id="yellow">Ready</button>
+                <button onclick="go1()" id="green">Go</button>
+            </div>
+            <div>
+                <div class="traffic">
+                    <div class="light" id="stop"></div>
+                    <div class="light" id="ready"></div>
+                    <div class="light" id="go"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

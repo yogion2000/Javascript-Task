@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+        }
+        *{
+            width: fit-content;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    <input type="number" id="val1">
+    <button onclick="trigger()">Submit</button>
+    <select name="" id="lister" onclick="user()">
+
+    </select>
+    <script>
+        function trigger(){
+        var val=document.getElementById("val1").value
+        for(var i=0;i<=val;i++){
+        var choIce=document.createElement("option")
+        choIce.setAttribute('id','opt1')
+        var listitems=document.getElementById("lister")
+        choIce.textContent=i;
+        listitems.appendChild(choIce)
+        }
+        document.getElementById("val1").value=""
+        }
+        function user(){
+            var val_1=document.getElementById("lister").value
+            for(var i=1;i<=val_1;i++)
+            {
+                var usernam=document.createElement("input")
+                usernam.setAttribute('type','text')
+                usernam.setAttribute('placeholder','user name')
+                var passwd=document.createElement("input")
+                passwd.setAttribute('type','password')
+                passwd.setAttribute('placeholder','password')
+                var bttn=document.createElement("button")
+                var text=document.createTextNode("login")
+                bttn.appendChild(text)
+                document.body.appendChild(usernam)
+                document.body.appendChild(passwd)
+                document.body.appendChild(bttn)
+            }
+        }
+        </script>
+</body>
+</html>

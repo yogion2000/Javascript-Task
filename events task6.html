@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arithmetic operation</title>
+</head>
+<body>
+    <div><input type="number" id="num1"></div>
+    <div><input type="number" id="num2"></div>
+    <p id="para"></p>
+    <p id="para1"></p>
+    <p id="para2"></p>
+    <p id="para3"></p>
+    <p id="para4"></p>
+    <button onclick="perform_operation()">Perform Opertaion</button>
+    <script>
+        function perform_operation(){
+            var number1=Number(document.getElementById("num1").value)
+            var number2=Number(document.getElementById("num2").value)
+            var add1=number1+number2;
+            var sub1=number1-number2;
+            var mult=number1*number2;
+            var div1=number1/number2;
+            var mod=number1%number2;
+            document.getElementById("para").innerHTML=add1;
+            document.getElementById("para1").innerHTML=sub1;
+            document.getElementById("para2").innerHTML=mult;
+            document.getElementById("para3").innerHTML=div1;
+            document.getElementById("para4").innerHTML=mod;
+        }
+    </script>
+</body>
+</html>

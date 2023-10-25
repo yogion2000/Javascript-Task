@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>domm creation task 2</title>
+
+    <style>
+        input{
+            height: 25px;
+        }
+        button{
+            height: 32px;
+            width: 70px;
+            background-color: #0065d2;
+            color: aliceblue;
+            border:0;
+            border-radius:5px;
+        }
+        body{
+            display: flex;
+            flex-direction:column;
+            align-items: center;
+        }
+    </style>
+
+</head>
+<body>
+        <h1>Add To Cart</h1>
+        <div>
+        <input  type="text" name="" id="cart">
+        <button onclick="add()">Add</button>
+        <!-- <button onclick="remove">Remove</button> -->
+        </div>
+        <p>My Cart Items</p>
+        <!-- <h1 id="list"></h1> -->
+        <ul id="list">
+        </ul>
+</body>
+<script>
+    function add(){
+        var lister=document.getElementById("list")
+        var items=document.getElementById("cart").value
+        var text=document.createElement("li")
+        text.textContent=items;
+        lister.appendChild(text)
+        document.getElementById("cart").value='';      
+    }
+    // function remove(){
+    //     document.getElementById("list").value='';
+    // }
+</script>
+</html>

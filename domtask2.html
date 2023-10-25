@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat task</title>
+    <script src="domtask2.js"></script>
+    <style>
+        body{
+            background-color: black;
+        }
+        .cat{
+            display: flex;
+            flex-direction:column;
+            align-items: center;
+        }
+        .box1{
+            background-color:#7b8794;
+            width: 200px;
+            height: 80px;
+            display: flex;
+            flex-direction:column;
+            align-items: center;
+            border-radius: 5px;
+        }
+        button{
+            width:50px;
+            background-color:#cbd2d9;
+            color:white;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: bolder;
+            box-shadow: 2px 2px 5px black;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="cat">
+        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/bulb-go-off-img.png" alt="" id="offBulb" width="100px">
+        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/cat-eyes-img.png" alt="" id="offCat" width="200px">
+        <div class="box1">
+            <p id="statement">Switch is OFF</p>
+            <div>
+            <button id="off" onclick="off()">OFF</button>
+            <button id="on" onclick="on()">ON</button>
+        </div>
+        </div>
+    </div>
+    
+</body>
+</html>

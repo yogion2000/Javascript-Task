@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UserName Validation</title>
+</head>
+<body>
+    <input type="text" id="usernam">
+    <button onclick="validate()">Submit</button>
+    <script>
+        function validate(){
+            var a=document.getElementById("usernam").value 
+            var patrn = /^[A-Za-z]+$/
+            var validat=a.match(patrn);
+            if(validat)
+            {
+                var txt=document.createTextNode("Enter a valid user Name");
+                alert("success")
+            }
+            else
+            {
+                var txt1=document.createTextNode("Successful");
+                alert("not success");
+            }
+            
+        }
+    </script>
+</body>
+</html>

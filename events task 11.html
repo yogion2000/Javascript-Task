@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>password</title>
+    <style>
+        *{
+            margin:4px;
+        }
+    </style>
+</head>
+<body>
+    <label for="username">Username</label>
+    <input type="text" id="usnam"><br>
+    <label for="Date">Date of Birth</label>
+    <input type="date" id="dat"><br>
+    <button onclick="getval()">Submit</button>
+    <p id="pass"></p>
+
+    <script>
+        function getval(){
+            var nam=document.getElementById("usnam").value.slice(0,4)
+            var dat=document.getElementById("dat").value.slice(0,4)
+            var pas= "Password: "+nam+dat;
+            document.getElementById("pass").innerHTML=pas; 
+           
+        }
+    </script>
+
+</body>
+</html>

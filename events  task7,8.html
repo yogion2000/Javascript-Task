@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task7</title>
+</head>
+<body>
+    <input type="number" id="val1" onkeyup="trigger()">
+    <!-- <button onclick="trigger()">Sumit</button> -->
+    <select name="" id="lister">
+
+    </select>
+    <script>
+        function trigger(){
+        var val=document.getElementById("val1").value
+        var choIce=document.createElement("option")
+        var listitems=document.getElementById("lister")
+        choIce.textContent=val;
+        listitems.appendChild(choIce)
+        document.getElementById("val1").value=""
+        }
+    </script>
+</body>
+</html>

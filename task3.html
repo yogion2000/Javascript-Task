@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Task</title>
+</head>
+<body>
+        <table>
+            <form action="" onsubmit="dat()">
+            <tr>
+                <td>
+                    <input type="text" id="username" placeholder="User Name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="date" id="dob" placeholder="Date of Birth">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="city" placeholder="city">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="pincode" placeholder="Pincode">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit">
+                </td>
+            </tr>
+            </form>
+        </table>
+        <button onclick="show()" style="margin-left: 4px;">Show</button>
+        <table id="ouptdata">
+
+        </table>
+    </div>
+    <script>
+        function dat(){
+            alert("success")
+            var username=document.getElementById("username").value 
+            var dob=document.getElementById("dob").value
+            var city=document.getElementById("city").value
+            var pincode=document.getElementById("pincode").value
+            var input_data={
+                username:username,
+                dob:dob,
+                city:city,
+                pincode:pincode
+            }
+            var loc=localStorage.getItem("locdata")
+            var locpass=loc?JSON.parse(loc):[];
+            locpass.push(input_data)
+            localStorage.setItem("locdata",JSON.stringify(locpass))
+        }
+        function show(){
+            var tab=document.getElementById("ouptdata")
+            var outdis=localStorage.getItem("locdata")
+            var outdis2=outdis?JSON.parse(outdis):[];
+            var sum="";
+            outdis2.map((key,value)=>
+                sum+="<tr><td>"+key.username+"</td></tr>"+
+                "<tr><td>"+key.dob+"</td></tr>"+
+                "<tr><td>"+key.city+"</td></tr>"+
+                "<tr><td>"+key.pincode+"</td></tr>"
+            )
+            tab.innerHTML=sum;
+        }
+
+    </script>
+</form>
+</body>
+</html>

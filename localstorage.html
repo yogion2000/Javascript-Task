@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <title>Local Storage</title>
+</head>
+
+<body>
+    Enter the first name :
+    <input type="text" id="firstname" />
+    Enter the last name :
+    <input type="text" id="lastname" />
+    <button onclick="handlesubmit()">Submit</button>
+    <button onclick="handlelist()">list submition</button>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Frist Name</th>
+                <th>Last Name</th>
+            </tr>
+        </thead>
+        <tbody id="tablebody"></tbody>
+    </table>
+    <script>
+        function handlesubmit() {
+            var firstname = document.getElementById("firstname").value;
+            var lastname = document.getElementById("lastname").value;
+
+            var inputdata = {
+                firstname: firstname,
+                lastname: lastname
+            }
+            let storedData = localStorage.getItem("userdata");
+            let passdata = storedData ? JSON.parse(storedData) : [];
+            passdata.push(inputdata)
+            localStorage.setItem("userdata", JSON.stringify(passdata))
+            alert("login successfully")
+        }
+
+        function handlelist(){
+            var tablebody=document.getElementById("tablebody")
+            var output=""
+            var givendata = localStorage.getItem("userdata")
+            let passdata = givendata ? JSON.parse(givendata) : [];
+
+            passdata.map((index,value)=>{
+                output+='<tr><td>'+index.firstname+'</td>'+
+                        '<td>'+index.lastname+'</td></tr>'
+            })
+            tablebody.innerHTML=output;
+
+        }
+    </script>
+</body>
+
+</html>

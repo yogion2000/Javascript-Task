@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date task</title>
+    <style>
+        *{
+            margin: 3px;
+        }
+    </style>
+</head>
+<body>
+    <input type="date" name="" id="dat"><br>
+    <input type="text" name="" id="date1" placeholder="After 5 Days"><br>
+    <input type="text" name="" id="date2" placeholder="before 5 Days"><br>
+    <p id="in"></p>
+    <button onclick="datechange()">submit</button>
+    <script>
+        function datechange(){
+            var date1=new Date(document.getElementById("dat").value)
+            var date2=new Date(document.getElementById("dat").value)
+            date1.setDate(date1.getDate()+5)
+            var D=date1.getDate()
+            var M=date1.getMonth()
+            var Y=date1.getFullYear()
+            var datetoprint=D+"/"+(M+1)+"/"+Y;
+            document.getElementById("date1").value=datetoprint;
+            date2.setDate(date1.getDate()-5)
+            var D2=date2.getDate()
+            var M2=date2.getMonth()
+            var Y2=date2.getFullYear()
+            var datetoprint2=D2+"/"+(M2+1)+"/"+Y2;
+            document.getElementById("date2").value=datetoprint2;
+            
+
+            
+        }
+    </script>
+</body>
+</html>

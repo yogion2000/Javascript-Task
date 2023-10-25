@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task 1</title>
+</head>
+<body>
+    <input type="text" name="" id="firstname" placeholder="Enter the item">
+    <input type="text" id="lastname" placeholder="Enter the price">
+    <button onclick="submission()">Submit</button>
+    <button onclick="display()">Display</button>
+    <button onclick="total()">Total</button>
+    <table border="2px">
+        <thead>
+            <td>Items</td>
+            <td>Price</td>
+        </thead>
+        <tbody id="cells">
+
+        </tbody>
+    </table>
+    <script>
+        function submission(){
+            var firstname=document.getElementById("firstname").value 
+            var lastname=document.getElementById("lastname").value 
+            let dat={
+                first_name:firstname,
+                last_name:lastname
+            }
+            var locstor=localStorage.getItem("inndat")
+            var passdat=locstor ? JSON.parse(locstor) : [];
+            passdat.push(dat)
+            localStorage.setItem("inndat",JSON.stringify(passdat))
+            document.getElementById("firstname").value="";
+            document.getElementById("lastname").value="";
+        }
+        function display(){
+            var cells=document.getElementById("cells")
+            var out=localStorage.getItem("inndat")
+            var disout=out ? JSON.parse(out):[];
+            var display_out="";
+            disout.map((index,value)=>
+                display_out+="<tr><td>"+index.first_name+"</td>"+
+                    "<td>"+index.last_name+"</td></tr>"
+            )
+            cells.innerHTML=display_out;
+        }
+        function total(){
+            var cells=document.getElementById("cells")
+            var out=localStorage.getItem("inndat")
+            var disout=out ? JSON.parse(out):[];
+            total1=0;
+            tot_out="";
+            disout.map((index,value)=>
+                total1+=Number(index.last_name)
+            )
+            tot_out+="<tr><td>"+"Total"+"</td>"+
+                    "<td>"+total1+"</td></tr>";
+            cells.innerHTML=tot_out;
+        }
+
+    </script>
+</body>
+</html>

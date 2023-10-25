@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4</title>
+</head>
+<body>
+    <div><input type="text" id="value1"/></div>
+    <div><input type="text"id="value2"/></div>
+    <button onclick="trigger()">Compute</button>
+    <script>
+        function trigger(){
+        var num1=document.getElementById("value1").value
+        var num2=document.getElementById("value2").value
+        if(num1===num2)
+        {
+            alert("Data's are equal")
+        }
+        else
+        {
+            alert("Data's are inequal")
+        }
+    }
+    </script>
+</body>
+</html>

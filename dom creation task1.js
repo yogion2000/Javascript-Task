@@ -1,0 +1,16 @@
+function login(){
+    var box=document.createElement("div")
+    var text=document.createTextNode("Login Page")
+    var head=document.createElement("h1")
+    var username=document.createElement("input")
+    var box2=document.createElement("div")
+    var submit=document.createElement("button")
+    var btntxt=document.createTextNode("Click")
+    head.appendChild(text)
+    submit.appendChild(btntxt)
+    box2.appendChild(username)
+    box.appendChild(head)
+    box.appendChild(box2)
+    box.appendChild(submit)
+    document.body.appendChild(box)
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+</head>
+<body>
+    <div><input type="text" id="one"></div>
+    <div><input type="text" name="" id="two"></div>
+    <button onclick="validate1()">Submit</button>
+    <script>
+        function validate1(){
+            var input1=document.getElementById("one").value
+            var input2=document.getElementById("two").value
+            if((input1==="")||(input2===""))
+            {
+                alert("kindly fill it and try again......😣")
+            }
+            else
+            {
+                alert("fill correctly.....😍❤️")
+            }
+        }
+    </script>
+</body>
+</html>

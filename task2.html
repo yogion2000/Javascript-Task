@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task3</title>
+</head>
+<body>
+    <input type="text" id="val1">
+    <button onclick="getval()">Submit</button>
+    <ul id="lister">
+
+    </ul>
+    <script>
+        function getval(){
+        var valu=document.getElementById("val1").value 
+        let obj1={
+            ob1:valu,
+        }
+        var locstr=localStorage.getItem("fil")
+        var passdat=locstr ? JSON.parse(locstr) : [];
+        passdat.push(obj1)
+        localStorage.setItem("fil",JSON.stringify(passdat))
+        alert("successfull")
+        var out=localStorage.getItem("fil")
+        var disout=out?JSON.parse(out):[];
+        var inn=document.getElementById("lister")
+        var p=document.createElement("li")
+        sum="";
+        disout.map((key,value)=>
+            sum+="<li>"+key.ob1+"</li>"
+            
+        )
+        inn.innerHTML=sum;
+
+    }
+
+
+    </script>
+</body>
+</html>
