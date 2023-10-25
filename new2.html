@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+</head>
+<body>
+    <table  border="2px">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Initial</th>
+            </tr>
+        </thead>
+        <tbody id="tab">
+
+        </tbody>
+    </table>
+    <script>
+        var dis=document.getElementById("tab")
+        var dispaly1=localStorage.getItem("inner")
+        var distrt_dispaly1=dispaly1?JSON.parse(dispaly1):[];
+        var sum="";
+        distrt_dispaly1.map((key,value)=>
+                sum+="<tr><td>"+key.inp1+"</td>"+
+                    "<td>"+key.inp2+"</td></tr>"
+        )
+        dis.innerHTML=sum;
+    </script>
+</body>
+</html>

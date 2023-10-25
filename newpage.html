@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pass</title>
+</head>
+<body>
+    <form action="new2.html" onsubmit="passpage()">
+    <input type="text" id="inp1">
+    <input type="text" id="inp2">
+    <input type="submit">
+    </form>
+    <script>
+        function passpage(){
+            var inp1=document.getElementById("inp1").value 
+            var inp2=document.getElementById("inp2").value 
+            var obj={
+                inp1:inp1,
+                inp2:inp2
+            }
+            var loclstor=localStorage.getItem("inner")
+            var passstor=loclstor ? JSON.parse(loclstor):[];
+            passstor.push(obj)
+            localStorage.setItem("inner", JSON.stringify(passstor))
+            
+        }
+    </script>
+</body>
+</html>
